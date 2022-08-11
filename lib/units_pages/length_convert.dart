@@ -78,26 +78,30 @@ class _LengthConverterState extends State<LengthConverter> {
   @override
   Widget build(BuildContext context) {
     return Scaffold (
+        backgroundColor: Colors.white,
 
         appBar :AppBar(
           backgroundColor: Colors.indigo[900],
           automaticallyImplyLeading: true,
-            title:Text('Length Converter',
-            style:TextStyle(color:Colors.white)
-            ),
+          title:Text(''
+              'Length Converter',
+              style:TextStyle(color:Colors.white)
+          ),
+
         ),
-        body:SingleChildScrollView(
-            child:Container(
-              decoration: BoxDecoration(
-                image:DecorationImage(
-                  image:AssetImage('images/converter_img1.jpg'),
-                  fit:BoxFit.cover,
+        body:Container(
+          decoration: BoxDecoration(
+            image:DecorationImage(
+              image:AssetImage('assets/images/converter_img1.jpg'),
+              fit:BoxFit.cover,
 
-                ),
+            ),
 
 
-              ),
-              child: Center(
+          ),
+          child: SingleChildScrollView(
+
+              child:Center(
                   child:Padding(
                       padding:const EdgeInsets.symmetric(vertical:30,horizontal:10),
                       child:Column(
@@ -144,7 +148,7 @@ class _LengthConverterState extends State<LengthConverter> {
 
                               ),
                             ),
-                            const SizedBox(height:30),
+                            const SizedBox(height:50),
                             Text('From:',style:TextStyle(color:Colors.white,fontSize:20,fontWeight:FontWeight.w600)),
 
                             const SizedBox(height:5),
@@ -159,7 +163,7 @@ class _LengthConverterState extends State<LengthConverter> {
                                   child:DropdownButton<String>(
                                     value: fromUnit,
 
-                                    hint:Text('Choose your Unit',style:TextStyle(color:Colors.white)),
+                                    hint:const Text('Choose your Unit',style:TextStyle(color:Colors.white)),
                                     dropdownColor: Colors.indigo[700],
                                     isExpanded: true,
                                     focusColor:Colors.indigo,
@@ -187,7 +191,7 @@ class _LengthConverterState extends State<LengthConverter> {
                               ),
                             ),
                             const SizedBox(height:20),
-                            Text('To:',style:TextStyle(color:Colors.white,fontSize:20,fontWeight:FontWeight.w600)),
+                            const Text('To:',style:TextStyle(color:Colors.white,fontSize:20,fontWeight:FontWeight.w600)),
 
                             const SizedBox(height:5),
                             Container(
@@ -224,7 +228,7 @@ class _LengthConverterState extends State<LengthConverter> {
                                   )
                               ),
                             ),
-                            const SizedBox(height:30),
+                            const SizedBox(height:40),
                             FlatButton(
                               onPressed:(){
                                 if (isNumeric(checktext) == false){
@@ -258,7 +262,7 @@ class _LengthConverterState extends State<LengthConverter> {
 
                               ),
                             ),
-                            SizedBox(height:20),
+                            SizedBox(height:40),
                             Container(
 
                               padding:EdgeInsets.symmetric(horizontal:20,vertical:15),
@@ -281,11 +285,12 @@ class _LengthConverterState extends State<LengthConverter> {
 
 
                             ),
+                            SizedBox(height:150)
                           ]
                       )
                   )
-              ),
-            )
+              )
+          ),
         )
     );
   }

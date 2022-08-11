@@ -40,6 +40,9 @@ class _TemperatureConverterState extends State<TemperatureConverter> {
     else if(to == 'Kelvin(K)' && from =='Fahrenheit(°F)'){
       result = (value-32)*5/9 +273;
     }
+    else{
+      result = value;
+    }
 
     resultMessage = '$result';
 
@@ -86,18 +89,19 @@ class _TemperatureConverterState extends State<TemperatureConverter> {
           ),
 
         ),
-        body:SingleChildScrollView(
-            child:Container(
-              decoration: BoxDecoration(
-                image:DecorationImage(
-                  image:AssetImage('images/converter_img1.jpg'),
-                  fit:BoxFit.cover,
+        body:Container(
+          decoration: BoxDecoration(
+            image:DecorationImage(
+              image:AssetImage('assets/images/converter_img1.jpg'),
+              fit:BoxFit.cover,
 
-                ),
+            ),
 
 
-              ),
-              child: Center(
+          ),
+          child: SingleChildScrollView(
+
+              child:Center(
                   child:Padding(
                       padding:const EdgeInsets.symmetric(vertical:30,horizontal:10),
                       child:Column(
@@ -144,7 +148,7 @@ class _TemperatureConverterState extends State<TemperatureConverter> {
 
                               ),
                             ),
-                            const SizedBox(height:30),
+                            const SizedBox(height:50),
                             Text('From:',style:TextStyle(color:Colors.white,fontSize:20,fontWeight:FontWeight.w600)),
 
                             const SizedBox(height:5),
@@ -224,7 +228,7 @@ class _TemperatureConverterState extends State<TemperatureConverter> {
                                   )
                               ),
                             ),
-                            const SizedBox(height:30),
+                            const SizedBox(height:40),
                             FlatButton(
                               onPressed:(){
                                 if (isNumeric(checktext) == false){
@@ -258,7 +262,7 @@ class _TemperatureConverterState extends State<TemperatureConverter> {
 
                               ),
                             ),
-                            SizedBox(height:20),
+                            SizedBox(height:40),
                             Container(
 
                               padding:EdgeInsets.symmetric(horizontal:20,vertical:15),
@@ -281,11 +285,12 @@ class _TemperatureConverterState extends State<TemperatureConverter> {
 
 
                             ),
+                            SizedBox(height:150)
                           ]
                       )
                   )
-              ),
-            )
+              )
+          ),
         )
     );
   }

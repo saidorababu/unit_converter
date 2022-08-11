@@ -37,7 +37,7 @@ class _InitialPageState extends State<InitialPage> {
         body:Center(child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-        Image.asset('images/unit_converter.jpg',
+        Image.asset('assets/images/unit_converter.jpg',
           height:120,
           width:120
         ),

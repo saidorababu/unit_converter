@@ -74,27 +74,30 @@ class _SpeedConverterState extends State<SpeedConverter> {
   @override
   Widget build(BuildContext context) {
     return Scaffold (
+        backgroundColor: Colors.white,
 
         appBar :AppBar(
           backgroundColor: Colors.indigo[900],
           automaticallyImplyLeading: true,
-          title:Text('Speed Converter',
+          title:Text(''
+              'Speed Converter',
               style:TextStyle(color:Colors.white)
           ),
-          centerTitle: true,
+
         ),
-        body:SingleChildScrollView(
-            child:Container(
-              decoration: BoxDecoration(
-                image:DecorationImage(
-                  image:AssetImage('images/converter_img1.jpg'),
-                  fit:BoxFit.cover,
+        body:Container(
+          decoration: BoxDecoration(
+            image:DecorationImage(
+              image:AssetImage('assets/images/converter_img1.jpg'),
+              fit:BoxFit.cover,
 
-                ),
+            ),
 
 
-              ),
-              child: Center(
+          ),
+          child: SingleChildScrollView(
+
+              child:Center(
                   child:Padding(
                       padding:const EdgeInsets.symmetric(vertical:30,horizontal:10),
                       child:Column(
@@ -141,7 +144,7 @@ class _SpeedConverterState extends State<SpeedConverter> {
 
                               ),
                             ),
-                            const SizedBox(height:30),
+                            const SizedBox(height:50),
                             Text('From:',style:TextStyle(color:Colors.white,fontSize:20,fontWeight:FontWeight.w600)),
 
                             const SizedBox(height:5),
@@ -156,7 +159,7 @@ class _SpeedConverterState extends State<SpeedConverter> {
                                   child:DropdownButton<String>(
                                     value: fromUnit,
 
-                                    hint:Text('Choose your Unit',style:TextStyle(color:Colors.white)),
+                                    hint:const Text('Choose your Unit',style:TextStyle(color:Colors.white)),
                                     dropdownColor: Colors.indigo[700],
                                     isExpanded: true,
                                     focusColor:Colors.indigo,
@@ -184,7 +187,7 @@ class _SpeedConverterState extends State<SpeedConverter> {
                               ),
                             ),
                             const SizedBox(height:20),
-                            Text('To:',style:TextStyle(color:Colors.white,fontSize:20,fontWeight:FontWeight.w600)),
+                            const Text('To:',style:TextStyle(color:Colors.white,fontSize:20,fontWeight:FontWeight.w600)),
 
                             const SizedBox(height:5),
                             Container(
@@ -221,7 +224,7 @@ class _SpeedConverterState extends State<SpeedConverter> {
                                   )
                               ),
                             ),
-                            const SizedBox(height:30),
+                            const SizedBox(height:40),
                             FlatButton(
                               onPressed:(){
                                 if (isNumeric(checktext) == false){
@@ -255,7 +258,7 @@ class _SpeedConverterState extends State<SpeedConverter> {
 
                               ),
                             ),
-                            SizedBox(height:20),
+                            SizedBox(height:40),
                             Container(
 
                               padding:EdgeInsets.symmetric(horizontal:20,vertical:15),
@@ -278,11 +281,12 @@ class _SpeedConverterState extends State<SpeedConverter> {
 
 
                             ),
+                            SizedBox(height:150)
                           ]
                       )
                   )
-              ),
-            )
+              )
+          ),
         )
     );
   }

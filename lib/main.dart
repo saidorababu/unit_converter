@@ -63,7 +63,7 @@ class _UnitConverterHomeState extends State<UnitConverterHome> {
 
         decoration: BoxDecoration(
           image:DecorationImage(
-            image:AssetImage('images/converter_img1.jpg'),
+            image:AssetImage('assets/images/converter_img1.jpg'),
             fit:BoxFit.cover,
 
           ),
